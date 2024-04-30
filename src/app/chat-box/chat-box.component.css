@@ -6,3 +6,129 @@
 .message-input {
   margin-top: 10px;
 }
+
+.chat-main-block {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.chat-main-block .card {
+  position: relative;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.chat-main-block .card:after {
+  background-image: url("../../assets/chat-left-img.png");
+  content: "";
+  position: absolute;
+  left: -120px;
+  bottom: -120px;
+  height: 160px;
+  width: 160px;
+  background-size: 160px;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+
+.chat-main-block .card:before {
+  background-image: url("../../assets/chat-right-img.png");
+  content: "";
+  position: absolute;
+  right: -160px;
+  top: -90px;
+  width: 310px;
+  height: 177px;
+  background-repeat: no-repeat;
+  z-index: -1;
+  transform: rotate(45deg);
+}
+
+.message-item {
+  float: left;
+  width: 100%;
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+}
+.message-item:nth-child(2n) {
+  /* float: right; */
+  background: #f2f7ff;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+}
+/* .message-item:nth-child(2n) .message-content .chat-date-block, .message-item:nth-child(2n) .message-content {
+  flex-direction: row-reverse;
+}
+.message-item:nth-child(2n) .message-content .chat-date-block .message-sender {
+  display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+} */
+
+.message-sender {
+  display: flex;
+  align-items: center;
+}
+
+.message-sender img {
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid;
+  padding: 2px;
+  margin: 0 4px;
+}
+.message-item .message-content {
+  display: flex;
+  justify-content: start;
+  gap: 15px;
+  align-items: center;
+}
+.message-item .message-content .chat-date-block {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 8px;
+}
+.message-input {
+  display: flex;
+  justify-content: space-between;
+}
+.message-input .form-control{
+height: 44px;
+border-radius: 50px 0px 0px 50px;
+}
+.message-input .btn {
+  height: 44px;
+border-radius: 0 50px 50px 0;
+}
+.message-timestamp {
+  font-size: 12px;
+  font-style: italic;
+}
+
+
+.messages-container {
+  max-height: 400px;
+  overflow: auto;
+}
+
+.messages-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.messages-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+}
+
+.messages-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

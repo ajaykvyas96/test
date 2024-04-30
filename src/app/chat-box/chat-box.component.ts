@@ -36,7 +36,7 @@ export class ChatBoxComponent {
     }
     const newMessage: Message = {
       id: this.messages.length + 1,
-      sender: "Neel Dave",
+      sender: "Neel Dave(you)",
       content: content,
       timestamp: new Date(),
       profileColor: '#bf5f5f',
