@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">KPI Notes</div>
+
+        <div class="card-body messages-container">
+          <div *ngFor="let message of messages" class="message-item">
+            <div class="message-content">
+              <span class="message-sender" [style.color]="message.profileColor">{{ message.sender }}: </span>
+              <span class="message-text">{{ message.content }} </span>
+              <small class="message-timestamp text-muted">{{ message.timestamp | date: 'short' }}</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer message-input">
+          <textarea [(ngModel)]="newMessageContent" placeholder="Type your message..." required="" class="form-control"></textarea>
+          <button (click)="sendMessage(newMessageContent)" class="btn btn-primary">Send</button>
+        </div>
+        <div class="card-footer">
+          <div class="pagination-container">
+            <button (click)="loadPreviousPage()" class="btn" [disabled]="currentPage === 1">Previous</button>
+            <span>{{ currentPage }}</span>
+            <button (click)="loadNextPage()" class="btn" [disabled]="!((currentPage*pageSize) < totalMessages)">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
