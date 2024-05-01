@@ -7,7 +7,10 @@
             KPI Notes
           </div>
 
-          <div class="card-body messages-container">
+          <div class="card-body messages-container" #chatContainer (scroll)="onChatScroll($event)">
+            <div *ngIf="isLoading" class="loader-container">
+              <div class="loader"></div>
+            </div>
             <div *ngFor="let message of messages" class="message-item">
               <div class="message-content">
                 <div class="chat-date-block">
@@ -42,7 +45,7 @@
             </button>
           </div>
           <div class="card-footer text-center">
-            <div class="pagination-container">
+            <!-- <div class="pagination-container">
               <button
                 (click)="loadPreviousPage()"
                 class="btn btn-primary"
@@ -58,7 +61,7 @@
               >
                 Next
               </button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
